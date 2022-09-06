@@ -15,9 +15,9 @@ interface BreakingBadApi {
     /* Space is represented by a 'plus sign' between the first and last name.
        This query only works with the full name of a character. Double check your spelling!
        For example, name=Walter+White returns exactly Walter White, where name=Walter returns everyone with Walter in their name */
-    @GET("/api/characters?{name}")
+    @GET("/api/characters")
     suspend fun getCharacterSearch(
-        @Path("name") name: String
+        @Query("name") name: String
     ): Response<Characters>
 
 }

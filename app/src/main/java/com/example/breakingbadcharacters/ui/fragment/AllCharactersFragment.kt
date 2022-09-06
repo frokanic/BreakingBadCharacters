@@ -112,8 +112,6 @@ class AllCharactersFragment : Fragment(R.layout.fragment_all_characters) {
             layoutManager = LinearLayoutManager(activity)
         }
 
-
-
         allCharactersAdapter.setOnItemClickListener {
             val bundle = Bundle().apply {
                 putSerializable("character", it)
@@ -122,14 +120,6 @@ class AllCharactersFragment : Fragment(R.layout.fragment_all_characters) {
                 R.id.action_allCharactersFragment_to_characterDetailsFragment,
                 bundle
             )
-            /*
-
-            val action =
-                AllCharactersFragmentDirections.actionAllCharactersFragmentToCharacterDetailsFragment(
-                    it
-                )
-            Navigation.findNavController(requireView()).navigate(action)
-             */
         }
     }
 

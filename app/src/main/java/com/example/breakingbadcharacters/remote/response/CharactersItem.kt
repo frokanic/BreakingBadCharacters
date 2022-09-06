@@ -22,5 +22,6 @@ data class CharactersItem(
     val nickname: String,
     val occupation: List<String>,
     val portrayed: String,
-    val status: String
+    val status: String,
+    var saved: Boolean = false           //Added by me
 ): Serializable

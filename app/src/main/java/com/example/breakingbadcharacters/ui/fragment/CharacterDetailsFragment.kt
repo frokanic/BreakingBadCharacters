@@ -1,5 +1,6 @@
 package com.example.breakingbadcharacters.ui.fragment
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -57,6 +58,24 @@ class CharacterDetailsFragment : Fragment(R.layout.fragment_character_details) {
             binding.ivBetterCallSaul.visibility = View.VISIBLE
         }
 
+
+    }
+
+    private fun savedButton() {
+        val character = args.character
+
+
+        binding.btnSave.setOnClickListener {
+            if (character.saved == false) {
+                binding.btnSave.text = "Remove"
+                binding.btnSave.setBackgroundColor(Color.RED)
+                character.saved = true
+            } else {
+                binding.btnSave.text = "Save"
+                binding.btnSave.setBackgroundColor(Color.GREEN)
+                character.saved = false
+            }
+        }
 
     }
 
