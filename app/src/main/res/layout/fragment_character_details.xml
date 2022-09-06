@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="ui.fragment.CharacterDetailsFragment">
+
+    <ImageView
+        android:id="@+id/ivCharacterImage"
+        android:layout_width="144dp"
+        android:layout_height="161dp"
+        android:foreground="@drawable/ic_cycle"
+        android:src="@drawable/ic_character"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:text="Example Name"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCharacterImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivCharacterImage" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/lime"
+        android:text="@string/ButtonWatching"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCharacterImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <TextView
+        android:id="@+id/tvNickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nickname: "
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvOccupation"
+        app:layout_constraintTop_toBottomOf="@+id/ivCharacterImage"
+        tools:layout_editor_absoluteX="-108dp" />
+
+    <TextView
+        android:id="@+id/tvOccupation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:text="Occupation: "
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvBirthday"
+        app:layout_constraintTop_toBottomOf="@+id/tvNickname"
+        tools:layout_editor_absoluteX="-128dp" />
+
+    <TextView
+        android:id="@+id/tvBirthday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Birthday: "
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvStatus"
+        app:layout_constraintTop_toBottomOf="@+id/tvOccupation"
+        tools:layout_editor_absoluteX="-91dp" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Status: "
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvCategory"
+        app:layout_constraintTop_toBottomOf="@+id/tvBirthday"
+        tools:layout_editor_absoluteX="-83dp" />
+
+    <ImageView
+        android:id="@+id/ivDeceased"
+        android:layout_width="56dp"
+        android:layout_height="53dp"
+        android:foreground="@drawable/ic_cycle"
+        android:src="@drawable/ic_death_button"
+        app:layout_constraintBottom_toBottomOf="@+id/tvStatus"
+        app:layout_constraintEnd_toEndOf="@+id/tvStatus"
+        app:layout_constraintStart_toStartOf="@+id/ivBreakingBad"
+        app:layout_constraintTop_toTopOf="@+id/tvStatus"
+        android:visibility="invisible"/>
+
+
+    <TextView
+        android:id="@+id/tvCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Category: "
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStatus"
+        tools:layout_editor_absoluteX="-141dp" />
+
+    <ImageView
+        android:id="@+id/ivBreakingBad"
+        android:layout_width="51dp"
+        android:layout_height="53dp"
+        android:foreground="@drawable/ic_cycle"
+        android:src="@drawable/ic_breaking_bad"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCategory"
+        app:layout_constraintTop_toTopOf="@+id/tvCategory"
+        tools:layout_editor_absoluteX="149dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/ivBetterCallSaul"
+        android:layout_width="51dp"
+        android:layout_height="53dp"
+        android:foreground="@drawable/ic_cycle"
+        android:src="@drawable/ic_better_call_saul"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBreakingBad"
+        app:layout_constraintTop_toTopOf="@+id/ivBreakingBad"
+        tools:layout_editor_absoluteX="244dp"
+        android:visibility="invisible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

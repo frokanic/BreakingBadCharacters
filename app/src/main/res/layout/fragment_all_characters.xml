@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    tools:context="ui.fragment.AllCharactersFragment">
+
+    <EditText
+        android:id="@+id/svMainSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Search a character..."
+        app:layout_constraintBottom_toBottomOf="@+id/ivBreakingBad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivBetterCallSaul"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/ivBreakingBad"
+        android:layout_width="51dp"
+        android:layout_height="53dp"
+        android:foreground="@drawable/ic_cycle"
+        android:src="@drawable/ic_breaking_bad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivBetterCallSaul"
+        android:layout_width="51dp"
+        android:layout_height="53dp"
+        android:foreground="@drawable/ic_cycle"
+        android:src="@drawable/ic_better_call_saul"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBreakingBad"
+        app:layout_constraintStart_toEndOf="@+id/ivBreakingBad"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSavedCharacters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svMainSearch" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAllCharacters"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvSavedCharacters" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

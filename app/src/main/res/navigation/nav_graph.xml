@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allCharactersFragment">
+
+    <fragment
+        android:id="@+id/allCharactersFragment"
+        android:name="com.example.breakingbadcharacters.ui.fragment.AllCharactersFragment"
+        android:label="fragment_all_characters"
+        tools:layout="@layout/fragment_all_characters" >
+        <action
+            android:id="@+id/action_allCharactersFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailsFragment"
+        android:name="com.example.breakingbadcharacters.ui.fragment.CharacterDetailsFragment"
+        android:label="fragment_character_details"
+        tools:layout="@layout/fragment_character_details" >
+        <action
+            android:id="@+id/action_characterDetailsFragment_to_allCharactersFragment"
+            app:destination="@id/allCharactersFragment" />
+        <action
+            android:id="@+id/action_characterDetailsFragment_to_deathDetailsFragment"
+            app:destination="@id/deathDetailsFragment" />
+        <argument
+            android:name="character"
+            app:argType="com.example.breakingbadcharacters.remote.response.CharactersItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/deathDetailsFragment"
+        android:name="com.example.breakingbadcharacters.ui.fragment.DeathDetailsFragment"
+        android:label="fragment_death_details"
+        tools:layout="@layout/fragment_death_details" >
+        <action
+            android:id="@+id/action_deathDetailsFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+    </fragment>
+</navigation>
