@@ -44,7 +44,7 @@ class AllCharactersAdapter: RecyclerView.Adapter<AllCharactersAdapter.CharacterV
             Glide.with(this).load(character.img).into(binding.imgCharactersRecyclerViewImage)
             binding.tvCharactersRecyclerViewTitle.text = character.name
             setOnClickListener {
-                onItemClickListener?.let { it }
+                onItemClickListener?.let { it(character) }
             }
         }
     }
