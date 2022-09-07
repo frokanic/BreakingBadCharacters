@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val repository = BreakingBadRepository(BreakingBadDatabase(this))
-        val viewModelProviderFactory = MainActivityViewModelProviderFactory(repository)
+        val viewModelProviderFactory = MainActivityViewModelProviderFactory(application, repository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(MainActivityViewModel::class.java)
 
         setCurrentFragment(AllCharactersFragment())

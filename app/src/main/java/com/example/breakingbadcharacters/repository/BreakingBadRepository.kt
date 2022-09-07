@@ -1,10 +1,12 @@
 package com.example.breakingbadcharacters.repository
 
 
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.breakingbadcharacters.database.BreakingBadDatabase
 import com.example.breakingbadcharacters.remote.BreakingBadApi
 import com.example.breakingbadcharacters.remote.RetrofitInstance
 import com.example.breakingbadcharacters.remote.response.Characters
+import com.example.breakingbadcharacters.remote.response.CharactersItem
 import com.example.cocktailfinder.common.Resource
 import dagger.hilt.android.scopes.ActivityScoped
 import retrofit2.Response
@@ -24,6 +26,12 @@ class BreakingBadRepository(
     suspend fun searchCharacters(name: String): Response<Characters> {
         return RetrofitInstance.api.getCharacterSearch(name)
     }
+
+    suspend fun insertCharacter(character: CharactersItem) = db.getCharacterDao().insertCharacter(character)
+
+    fun showAllDbCharacters() = db.getCharacterDao().showAllDbCharacters()
+
+    suspend fun deleteCharacter(character: CharactersItem) = db.getCharacterDao().deleteCharacter(character)
 
 
 

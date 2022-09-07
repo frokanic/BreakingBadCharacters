@@ -11,6 +11,7 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.breakingbadcharacters.R
 import com.example.breakingbadcharacters.databinding.FragmentCharacterDetailsBinding
+import com.example.breakingbadcharacters.remote.response.CharactersItem
 import com.example.breakingbadcharacters.ui.activity.MainActivity
 import com.example.breakingbadcharacters.ui.activity.MainActivityViewModel
 
@@ -57,9 +58,8 @@ class CharacterDetailsFragment : Fragment(R.layout.fragment_character_details) {
         if (character.category.contains("Better Call Saul")) {
             binding.ivBetterCallSaul.visibility = View.VISIBLE
         }
-
-
     }
+
 
     private fun savedButton() {
         val character = args.character
@@ -70,13 +70,23 @@ class CharacterDetailsFragment : Fragment(R.layout.fragment_character_details) {
                 binding.btnSave.text = "Remove"
                 binding.btnSave.setBackgroundColor(Color.RED)
                 character.saved = true
+                saveCharacter(character)
             } else {
                 binding.btnSave.text = "Save"
                 binding.btnSave.setBackgroundColor(Color.GREEN)
                 character.saved = false
+                deleteCharacter(character)
             }
         }
 
+    }
+
+    private fun saveCharacter(character: CharactersItem) {
+        viewModel.saveCharacter(character)
+    }
+
+    private fun deleteCharacter(character: CharactersItem) {
+        viewModel.saveCharacter(character)
     }
 
 
