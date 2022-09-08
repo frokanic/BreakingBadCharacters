@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:backgroundTint="@color/white"
     tools:context="ui.fragment.CharacterDetailsFragment">
 
     <ImageView
@@ -110,10 +111,10 @@
         android:layout_height="53dp"
         android:foreground="@drawable/ic_cycle"
         android:src="@drawable/ic_breaking_bad"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/tvCategory"
-        app:layout_constraintTop_toTopOf="@+id/tvCategory"
-        tools:layout_editor_absoluteX="149dp"
-        android:visibility="invisible" />
+        app:layout_constraintEnd_toStartOf="@+id/ivBetterCallSaul"
+        app:layout_constraintTop_toTopOf="@+id/tvCategory" />
 
     <ImageView
         android:id="@+id/ivBetterCallSaul"
@@ -121,10 +122,11 @@
         android:layout_height="53dp"
         android:foreground="@drawable/ic_cycle"
         android:src="@drawable/ic_better_call_saul"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/ivBreakingBad"
+        app:layout_constraintEnd_toEndOf="@+id/tvCategory"
         app:layout_constraintTop_toTopOf="@+id/ivBreakingBad"
-        tools:layout_editor_absoluteX="244dp"
-        android:visibility="invisible" />
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

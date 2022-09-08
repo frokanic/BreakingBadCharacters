@@ -37,6 +37,7 @@ class CharacterDetailsFragment : Fragment(R.layout.fragment_character_details) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as MainActivity).viewModel
         setContext()
+        savedButton()
     }
 
 
@@ -46,7 +47,7 @@ class CharacterDetailsFragment : Fragment(R.layout.fragment_character_details) {
         Glide.with(this).load(character.img).into(binding.ivCharacterImage)
         binding.tvName.text = character.name
         binding.tvNickname.text = "Nickname: ${character.nickname}"
-        binding.tvOccupation.text = "Occupation: ${character.occupation}"
+        binding.tvOccupation.text = "Occupation: ${character.occupation[0]}"
         binding.tvBirthday.text = "Birthday: ${character.birthday}"
 
         if (character.status == "Deceased") {

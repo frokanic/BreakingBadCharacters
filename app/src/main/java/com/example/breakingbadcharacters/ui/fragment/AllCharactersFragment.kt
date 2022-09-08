@@ -126,6 +126,7 @@ class AllCharactersFragment : Fragment(R.layout.fragment_all_characters) {
                 bundle
             )
         }
+
     }
 
     private fun setupSavedCharactersRecyclerView() {
