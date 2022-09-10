@@ -22,20 +22,8 @@
         <action
             android:id="@+id/action_characterDetailsFragment_to_allCharactersFragment"
             app:destination="@id/allCharactersFragment" />
-        <action
-            android:id="@+id/action_characterDetailsFragment_to_deathDetailsFragment"
-            app:destination="@id/deathDetailsFragment" />
         <argument
             android:name="character"
             app:argType="com.example.breakingbadcharacters.remote.response.CharactersItem" />
-    </fragment>
-    <fragment
-        android:id="@+id/deathDetailsFragment"
-        android:name="com.example.breakingbadcharacters.ui.fragment.DeathDetailsFragment"
-        android:label="fragment_death_details"
-        tools:layout="@layout/fragment_death_details" >
-        <action
-            android:id="@+id/action_deathDetailsFragment_to_characterDetailsFragment"
-            app:destination="@id/characterDetailsFragment" />
     </fragment>
 </navigation>

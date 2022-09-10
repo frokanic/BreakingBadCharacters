@@ -1,10 +1,7 @@
 package com.example.breakingbadcharacters.remote.response
 
-import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
 import java.io.Serializable
 
 @Entity(
@@ -23,5 +20,6 @@ data class CharactersItem(
     val occupation: List<String>,
     val portrayed: String,
     val status: String,
-    var saved: Boolean = false           //Added by me
+    var saved: Boolean = false          //Added by me
 ): Serializable
+

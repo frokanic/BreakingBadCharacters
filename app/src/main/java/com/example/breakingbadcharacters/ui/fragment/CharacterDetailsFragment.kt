@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
@@ -64,30 +63,35 @@ class CharacterDetailsFragment : Fragment(R.layout.fragment_character_details) {
 
     private fun savedButton() {
         val character = args.character
-
+        if (character.saved == false) {
+            saveButtonSetup()
+        } else {
+            removeButtonSetup()
+        }
 
         binding.btnSave.setOnClickListener {
             if (character.saved == false) {
-                binding.btnSave.text = "Remove"
-                binding.btnSave.setBackgroundColor(Color.RED)
+                removeButtonSetup()
                 character.saved = true
-                saveCharacter(character)
+                viewModel.saveCharacter(character)
             } else {
-                binding.btnSave.text = "Save"
-                binding.btnSave.setBackgroundColor(Color.GREEN)
+                saveButtonSetup()
                 character.saved = false
-                deleteCharacter(character)
+                viewModel.deleteCharacter(character)
             }
         }
 
     }
 
-    private fun saveCharacter(character: CharactersItem) {
-        viewModel.saveCharacter(character)
+
+    private fun saveButtonSetup() {
+        binding.btnSave.text = "Save"
+        binding.btnSave.setBackgroundColor(Color.GREEN)
     }
 
-    private fun deleteCharacter(character: CharactersItem) {
-        viewModel.saveCharacter(character)
+    private fun removeButtonSetup() {
+        binding.btnSave.text = "Remove"
+        binding.btnSave.setBackgroundColor(Color.RED)
     }
 
 

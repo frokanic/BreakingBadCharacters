@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.breakingbadcharacters.databinding.AllCharactersListItemBinding
 import com.example.breakingbadcharacters.databinding.SavedCharactersListItemBinding
 import com.example.breakingbadcharacters.remote.response.CharactersItem
 
@@ -47,7 +46,7 @@ class SavedCharactersAdapter: RecyclerView.Adapter<SavedCharactersAdapter.Charac
             Glide.with(this).load(character.img).into(binding.ivSavedCharacters)
             binding.tvSavedCharacters.text = character.name
             setOnClickListener {
-                onItemClickListener?.let { it }
+                onItemClickListener?.let { it(character) }
             }
         }
     }

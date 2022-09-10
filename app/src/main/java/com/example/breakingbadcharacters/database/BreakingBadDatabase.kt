@@ -2,7 +2,6 @@ package com.example.breakingbadcharacters.database
 
 import android.content.Context
 import androidx.room.*
-import com.example.breakingbadcharacters.remote.response.Characters
 import com.example.breakingbadcharacters.remote.response.CharactersItem
 
 

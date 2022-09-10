@@ -1,7 +1,6 @@
 package com.example.breakingbadcharacters.database
 
 import androidx.room.TypeConverter
-import com.example.breakingbadcharacters.remote.response.CharactersItem
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
